@@ -14,9 +14,20 @@
 		BA018CE51E8F45740007AC6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA018CE41E8F45740007AC6F /* Assets.xcassets */; };
 		BA018CE81E8F45740007AC6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA018CE61E8F45740007AC6F /* LaunchScreen.storyboard */; };
 		BA05097C1E8FFC6900FD6D79 /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05097B1E8FFC6900FD6D79 /* DetailsController.swift */; };
+		BA2121C41E9069EA00061A97 /* ios_core_data_gardenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2121C31E9069EA00061A97 /* ios_core_data_gardenUITests.swift */; };
 		BA72418A1E902B9600DE100B /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7241891E902B9600DE100B /* CoreDataHelper.swift */; };
 		BA72418C1E90398F00DE100B /* iPad-Draw.png in Resources */ = {isa = PBXBuildFile; fileRef = BA72418B1E90398F00DE100B /* iPad-Draw.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BA2121C61E9069EA00061A97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA018CCF1E8F45740007AC6F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA018CD61E8F45740007AC6F;
+			remoteInfo = "ios-core-data-garden";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		BA018CD71E8F45740007AC6F /* ios-core-data-garden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-core-data-garden.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,12 +39,22 @@
 		BA018CE71E8F45740007AC6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA018CE91E8F45740007AC6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA05097B1E8FFC6900FD6D79 /* DetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
+		BA2121C11E9069E900061A97 /* ios-core-data-gardenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-core-data-gardenUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA2121C31E9069EA00061A97 /* ios_core_data_gardenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_core_data_gardenUITests.swift; sourceTree = "<group>"; };
+		BA2121C51E9069EA00061A97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA7241891E902B9600DE100B /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		BA72418B1E90398F00DE100B /* iPad-Draw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-Draw.png"; path = "../../../Downloads/iPad-Draw.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BA018CD41E8F45740007AC6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA2121BE1E9069E900061A97 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -47,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				BA018CD91E8F45740007AC6F /* ios-core-data-garden */,
+				BA2121C21E9069EA00061A97 /* ios-core-data-gardenUITests */,
 				BA018CD81E8F45740007AC6F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				BA018CD71E8F45740007AC6F /* ios-core-data-garden.app */,
+				BA2121C11E9069E900061A97 /* ios-core-data-gardenUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,6 +97,15 @@
 				BA7241891E902B9600DE100B /* CoreDataHelper.swift */,
 			);
 			path = "ios-core-data-garden";
+			sourceTree = "<group>";
+		};
+		BA2121C21E9069EA00061A97 /* ios-core-data-gardenUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BA2121C31E9069EA00061A97 /* ios_core_data_gardenUITests.swift */,
+				BA2121C51E9069EA00061A97 /* Info.plist */,
+			);
+			path = "ios-core-data-gardenUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +128,24 @@
 			productReference = BA018CD71E8F45740007AC6F /* ios-core-data-garden.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BA2121C01E9069E900061A97 /* ios-core-data-gardenUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA2121CA1E9069EA00061A97 /* Build configuration list for PBXNativeTarget "ios-core-data-gardenUITests" */;
+			buildPhases = (
+				BA2121BD1E9069E900061A97 /* Sources */,
+				BA2121BE1E9069E900061A97 /* Frameworks */,
+				BA2121BF1E9069E900061A97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA2121C71E9069EA00061A97 /* PBXTargetDependency */,
+			);
+			name = "ios-core-data-gardenUITests";
+			productName = "ios-core-data-gardenUITests";
+			productReference = BA2121C11E9069E900061A97 /* ios-core-data-gardenUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -109,6 +159,11 @@
 					BA018CD61E8F45740007AC6F = {
 						CreatedOnToolsVersion = 8.3;
 						ProvisioningStyle = Automatic;
+					};
+					BA2121C01E9069E900061A97 = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BA018CD61E8F45740007AC6F;
 					};
 				};
 			};
@@ -126,6 +181,7 @@
 			projectRoot = "";
 			targets = (
 				BA018CD61E8F45740007AC6F /* ios-core-data-garden */,
+				BA2121C01E9069E900061A97 /* ios-core-data-gardenUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -139,6 +195,13 @@
 				BA72418C1E90398F00DE100B /* iPad-Draw.png in Resources */,
 				BA018CE51E8F45740007AC6F /* Assets.xcassets in Resources */,
 				BA018CE01E8F45740007AC6F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA2121BF1E9069E900061A97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,7 +220,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BA2121BD1E9069E900061A97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA2121C41E9069EA00061A97 /* ios_core_data_gardenUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BA2121C71E9069EA00061A97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA018CD61E8F45740007AC6F /* ios-core-data-garden */;
+			targetProxy = BA2121C61E9069EA00061A97 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BA018CDE1E8F45740007AC6F /* Main.storyboard */ = {
@@ -298,6 +377,30 @@
 			};
 			name = Release;
 		};
+		BA2121C81E9069EA00061A97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "ios-core-data-gardenUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kahneraja.ios-core-data-gardenUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "ios-core-data-garden";
+			};
+			name = Debug;
+		};
+		BA2121C91E9069EA00061A97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "ios-core-data-gardenUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kahneraja.ios-core-data-gardenUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "ios-core-data-garden";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -318,6 +421,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		BA2121CA1E9069EA00061A97 /* Build configuration list for PBXNativeTarget "ios-core-data-gardenUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA2121C81E9069EA00061A97 /* Debug */,
+				BA2121C91E9069EA00061A97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
