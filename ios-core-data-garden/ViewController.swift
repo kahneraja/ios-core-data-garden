@@ -1,4 +1,5 @@
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     var personCount = 1;
@@ -39,7 +40,9 @@ class ViewController: UIViewController {
         peopleContainer.removeAll()
         
         do {
-            try peopleContainer += appDelegate.persistentContainer.viewContext.fetch(Person.fetchRequest())
+            let request: NSFetchRequest<Person> = Person.fetchRequest()
+            // request.predicate = NSPredicate(format: "firstName CONTAINS[cd] %@", "1")
+            try peopleContainer += appDelegate.persistentContainer.viewContext.fetch(request)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
