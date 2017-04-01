@@ -2,7 +2,10 @@ import UIKit
 import CoreData
 
 class ViewController: UIViewController {
-    var personCount = 1;
+    
+    var SEGUE_DETAILS = "segue1"
+    
+    var personCount = 1
     var peopleContainer : [Person] = []
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
@@ -41,7 +44,7 @@ class ViewController: UIViewController {
         
         do {
             let request: NSFetchRequest<Person> = Person.fetchRequest()
-            // request.predicate = NSPredicate(format: "firstName CONTAINS[cd] %@", "1")
+            // request.preOdicate = NSPredicate(format: "firstName CONTAINS[cd] %@", "1")
             try peopleContainer += appDelegate.persistentContainer.viewContext.fetch(request)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -66,5 +69,18 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100 
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let person = peopleContainer[indexPath.row]
+        performSegue(withIdentifier: SEGUE_DETAILS, sender: person)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier! == SEGUE_DETAILS){
+            let person = sender as! Person
+            let destination = segue.destination as! DetailsController
+            destination.person = person
+        }
     }
 }

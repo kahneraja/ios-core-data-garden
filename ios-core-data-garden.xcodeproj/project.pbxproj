@@ -13,6 +13,7 @@
 		BA018CE31E8F45740007AC6F /* ios_core_data_garden.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA018CE11E8F45740007AC6F /* ios_core_data_garden.xcdatamodeld */; };
 		BA018CE51E8F45740007AC6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA018CE41E8F45740007AC6F /* Assets.xcassets */; };
 		BA018CE81E8F45740007AC6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA018CE61E8F45740007AC6F /* LaunchScreen.storyboard */; };
+		BA05097C1E8FFC6900FD6D79 /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05097B1E8FFC6900FD6D79 /* DetailsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BA018CE41E8F45740007AC6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA018CE71E8F45740007AC6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA018CE91E8F45740007AC6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA05097B1E8FFC6900FD6D79 /* DetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				BA018CE61E8F45740007AC6F /* LaunchScreen.storyboard */,
 				BA018CE91E8F45740007AC6F /* Info.plist */,
 				BA018CE11E8F45740007AC6F /* ios_core_data_garden.xcdatamodeld */,
+				BA05097B1E8FFC6900FD6D79 /* DetailsController.swift */,
 			);
 			path = "ios-core-data-garden";
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA05097C1E8FFC6900FD6D79 /* DetailsController.swift in Sources */,
 				BA018CDD1E8F45740007AC6F /* ViewController.swift in Sources */,
 				BA018CDB1E8F45740007AC6F /* AppDelegate.swift in Sources */,
 				BA018CE31E8F45740007AC6F /* ios_core_data_garden.xcdatamodeld in Sources */,
@@ -305,6 +309,7 @@
 				BA018CEE1E8F45740007AC6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
