@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -72,18 +73,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSE-4e-AgB">
-                                <rect key="frame" x="113" y="143" width="220" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPad-Draw.png" translatesAutoresizingMaskIntoConstraints="NO" id="lcQ-G0-hRj">
+                                <rect key="frame" x="16" y="0.0" width="343" height="667"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="juB-uW-ZEI" firstAttribute="top" secondItem="lcQ-G0-hRj" secondAttribute="bottom" id="C7I-4t-4dA"/>
+                            <constraint firstItem="lcQ-G0-hRj" firstAttribute="leading" secondItem="izU-4t-HFo" secondAttribute="leadingMargin" id="DiZ-IY-Lag"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lcQ-G0-hRj" secondAttribute="trailing" id="pLM-pb-gDN"/>
+                            <constraint firstItem="lcQ-G0-hRj" firstAttribute="top" secondItem="izU-4t-HFo" secondAttribute="topMargin" id="xdh-lj-giJ"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="uiLabel" destination="OSE-4e-AgB" id="1MN-Rb-jv0"/>
+                        <outlet property="UIImageView1" destination="lcQ-G0-hRj" id="RwG-Rn-vcz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hI-Pm-ruq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -109,4 +112,7 @@
             <point key="canvasLocation" x="-98.400000000000006" y="777.66116941529242"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iPad-Draw.png" width="768" height="1024"/>
+    </resources>
 </document>

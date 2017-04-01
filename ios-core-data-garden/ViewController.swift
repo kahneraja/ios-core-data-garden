@@ -5,10 +5,8 @@ class ViewController: UIViewController {
     
     var SEGUE_DETAILS = "segue1"
     
-    var personCount = 1
-    var peopleContainer : [Person] = []
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-
+    var peopleContainer: [Person] = []
+    
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -16,6 +14,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         reloadDataChanges()
     }
 
@@ -24,33 +25,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addClick(_ sender: Any) {
-        appDelegate.persistentContainer.performBackgroundTask{(backgroundContext) in
-            let personEntity = Person(context: backgroundContext)
-            personEntity.firstName = "Person \(self.personCount)"
-            personEntity.age = Int32(self.personCount)
-            self.personCount += 1
-            do {
-                try backgroundContext.save()
-                self.reloadDataChanges()
-            } catch {
-                print(error.localizedDescription)
-            }
-            
-        }
+        let person = Person(context: CoreDataHelper.sharedInstance.viewContext())
+        person.firstName = "Exercise \(self.peopleContainer.count + 1)"
+        person.age = Int32(10)
+        CoreDataHelper.sharedInstance.saveContext()
+        self.reloadDataChanges()
     }
     
     func reloadDataChanges() {
         peopleContainer.removeAll()
-        
-        do {
-            let request: NSFetchRequest<Person> = Person.fetchRequest()
-            // request.preOdicate = NSPredicate(format: "firstName CONTAINS[cd] %@", "1")
-            try peopleContainer += appDelegate.persistentContainer.viewContext.fetch(request)
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        } catch {
-            print(error.localizedDescription)
+        peopleContainer = CoreDataHelper.sharedInstance.fetchAllPeople() as! [Person]
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
 }
@@ -63,7 +49,9 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
  
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        cell?.textLabel?.text = peopleContainer[indexPath.row].firstName
+        let person = peopleContainer[indexPath.row]
+        let text = "\(person.firstName ?? "") (\(person.totalPoints))"
+        cell?.textLabel?.text = text
         return cell!
     }
     
@@ -82,5 +70,21 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
             let destination = segue.destination as! DetailsController
             destination.person = person
         }
+    }
+}
+
+extension Person {
+
+    var totalPoints: Int {
+        
+        get {
+            if (self.drawing == nil || self.drawing!.points == nil) {
+                return 0
+            }
+            else {
+                return (self.drawing?.points?.count)!
+            }
+        }
+        
     }
 }
